@@ -7,7 +7,12 @@
 make install
 ```
 
-#### Downlaod Dataset
+#### Download Dataset
 ```
 make download-dataset
+```
+
+#### Instalar lib
+```
+uv add nome-lib
 ```
