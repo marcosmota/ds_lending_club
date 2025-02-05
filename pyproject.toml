@@ -9,10 +9,12 @@ dependencies = [
     "gdown>=5.2.0",
     "ipykernel>=6.29.5",
     "matplotlib>=3.10.0",
+    "numpy==2.1.0",
     "pandas>=2.2.3",
     "pyarrow>=19.0.0",
     "pytest>=8.3.4",
     "scikit-learn>=1.6.1",
     "scipy>=1.15.1",
     "seaborn>=0.13.2",
+    "shap>=0.46.0",
 ]
