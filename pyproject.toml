@@ -17,4 +17,5 @@ dependencies = [
     "scipy>=1.15.1",
     "seaborn>=0.13.2",
     "shap>=0.46.0",
+    "xgboost>=2.1.3",
 ]
