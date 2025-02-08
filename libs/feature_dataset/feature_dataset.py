@@ -26,6 +26,7 @@ class FeatureDataset:
     def create_feature_dataset(
         self, name: str, dataset: pd.DataFrame, version: int = 1
     ):
+        
         con = duckdb.connect(database=self._database_file)
         con.execute(
             f"CREATE OR REPLACE TABLE fd_{name}_{version} AS SELECT * FROM dataset"
