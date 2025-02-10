@@ -11,14 +11,14 @@ class FeatureDataset:
         self._database_file = database_file or DEFAULT_FEATURE_STORE_FILE
 
     def get_feature_dataset(
-        self, name: str, features: Optional[List[str]] = None
+        self, name: str, features: Optional[List[str]] = None, version: int = 1
     ) -> duckdb.DuckDBPyRelation:
         con = duckdb.connect(database=self._database_file)
         if features:
             features_str = ", ".join(features)
         else:
             features_str = "*"
-        query = f"SELECT {features_str} FROM fd_{name}_1"
+        query = f"SELECT {features_str} FROM fd_{name}_{version}"
         data = con.query(query).to_df()
         con.close()
         return data
@@ -26,7 +26,7 @@ class FeatureDataset:
     def create_feature_dataset(
         self, name: str, dataset: pd.DataFrame, version: int = 1
     ):
-        
+
         con = duckdb.connect(database=self._database_file)
         con.execute(
             f"CREATE OR REPLACE TABLE fd_{name}_{version} AS SELECT * FROM dataset"

@@ -1,0 +1,21 @@
+
+target: "default"
+feature_dataset_path: "../data/feature_store.db"
+steps:
+  eda:
+    dataset: x
+  clean:
+    dataset: x
+  feature_engineering:
+    dataset: x
+    train_size: 0.75
+    test_size: 0.15
+    val_size: 0.10
+  training:
+    dataset:
+      traning: loa
+
+  hypertuninng:
+    parameter: 1
+  inference:
+    dataset: x
